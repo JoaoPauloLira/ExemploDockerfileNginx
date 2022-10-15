@@ -4,9 +4,10 @@ services:
   appgo:
     image: golang:1.19
     volumes:
-      - /appgo:/go/src/app
+      - ./appgo:/go/src/app
     ports:
       - "8000:8000"
+    command: "tail -f /dev/null"
 
   mysql:
     image: mysql:5.7
